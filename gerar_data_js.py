@@ -59,8 +59,9 @@ for folder in hero_folder_candidates:
 if not hero_imgs:
     print('  hero: nenhum index_capa_* encontrado — usando fotos das categorias')
     for cat in ['retratos', 'moda', 'alimentos', 'arquitetura']:
-        if covers.get(cat):
-            hero_imgs.append({'src': f'images/{cat}/{covers[cat]}', 'label': cat.capitalize()})
+        previews = covers.get(cat, [])
+        if previews:
+            hero_imgs.append({'src': f'images/{cat}/{previews[0]}', 'label': cat.capitalize()})
         elif results.get(cat):
             hero_imgs.append({'src': f'images/{cat}/{results[cat][0]}', 'label': cat.capitalize()})
         if len(hero_imgs) == 4:
