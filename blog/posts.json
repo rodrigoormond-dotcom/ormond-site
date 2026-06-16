@@ -1,10 +1,50 @@
 [
   {
-    "title": "Case Thera — Fotografia de Produto",
+    "title": "Case Thera — Sistema Completo de Fotografia de Produto",
     "slug": "posts/thera",
     "date": "2018-07-01",
     "category": "projetos",
-    "excerpt": "Como criamos um sistema completo de fotografia de produto para a Thera: da pré-produção ao banco de 200+ imagens para e-commerce, catálogos e campanha digital.",
-    "image": "../../images/produtos/THERA_garrafas-142.jpg"
+    "excerpt": "Como criamos um banco de 200+ imagens para e-commerce, catálogos e campanhas digitais da Thera, marca catarinense de produtos de saúde e bem-estar.",
+    "image": "../images/produtos/index_produtos_3_vita-still-13366.jpg"
+  },
+  {
+    "title": "Case Ibagy — Fotografia de Imóveis de Alto Padrão",
+    "slug": "posts/ibagy",
+    "date": "2024-06-10",
+    "category": "projetos",
+    "excerpt": "Parceria com a Ibagy Imóveis para criar imagens que valorizam empreendimentos residenciais e comerciais em Florianópolis e região.",
+    "image": "../images/arquitetura/index_MG_0854.jpg"
+  },
+  {
+    "title": "Case Unimed — Campanha Verão em Santa Catarina",
+    "slug": "posts/unimed-verao",
+    "date": "2023-12-05",
+    "category": "projetos",
+    "excerpt": "Produção da campanha de verão da Unimed SC: modelos, locações litorâneas e conceito visual alinhado à identidade da marca.",
+    "image": "../images/publicidade/index_S3A6047.jpg"
+  },
+  {
+    "title": "Case Beto Carreiro World — Publicidade e Entretenimento",
+    "slug": "posts/beto-carreiro",
+    "date": "2023-08-20",
+    "category": "projetos",
+    "excerpt": "Imagens publicitárias para um dos maiores parques temáticos da América Latina, capturando a energia e a magia das atrações.",
+    "image": "../images/publicidade/index_2013-06-14-Dohler-375.jpg"
+  },
+  {
+    "title": "Fotografia Aérea para Construção Civil — O Poder do Drone",
+    "slug": "posts/drone-construcao",
+    "date": "2024-01-18",
+    "category": "tecnica",
+    "excerpt": "Como imagens aéreas feitas com drone transformam a comunicação de construtoras: do acompanhamento de obra ao material de vendas.",
+    "image": "../images/arquitetura/index_PANO0009-2-Pano-Edit.jpg"
+  },
+  {
+    "title": "Fotografia de Alimentos — Transformando Pratos em Desejo",
+    "slug": "posts/fotografia-alimentos",
+    "date": "2023-10-12",
+    "category": "tecnica",
+    "excerpt": "Técnicas e bastidores de uma produção de food photography: iluminação, styling, props e o trabalho de equipe que faz cada prato parecer irresistível.",
+    "image": "../images/alimentos/index_IMG_0056-2.jpg"
   }
 ]

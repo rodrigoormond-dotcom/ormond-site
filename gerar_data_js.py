@@ -38,26 +38,20 @@ for cat in CATEGORIAS:
     cover_info = f' | {len(previews)} preview(s)' if previews else ' | sem index_*'
     print(f'  {cat}: {len(files)} imagens{cover_info}')
 
-# Hero: files named index_capa_*.jpg inside images/hero/ or images/ root
-hero_folder_candidates = [
-    os.path.join(SITE_DIR, 'images', 'hero'),
-    os.path.join(SITE_DIR, 'images'),
-]
+# Hero: qualquer imagem dentro de images/hero/
+hero_folder = os.path.join(SITE_DIR, 'images', 'hero')
 hero_imgs = []
-for folder in hero_folder_candidates:
-    if os.path.isdir(folder):
-        capa_files = sorted([f for f in os.listdir(folder)
-                             if f.lower().startswith('index_capa_') and os.path.splitext(f)[1].lower() in EXTS])
-        rel_base = 'images/hero' if 'hero' in folder else 'images'
-        for f in capa_files:
-            hero_imgs.append({'src': f'{rel_base}/{f}', 'label': 'Ormond'})
-        if hero_imgs:
-            print(f'  hero: {len(hero_imgs)} imagens capa (index_capa_*)')
-            break
+if os.path.isdir(hero_folder):
+    hero_files = sorted([f for f in os.listdir(hero_folder)
+                         if os.path.splitext(f)[1].lower() in EXTS])
+    for f in hero_files:
+        hero_imgs.append({'src': f'images/hero/{f}', 'label': 'Ormond'})
+    if hero_imgs:
+        print(f'  hero: {len(hero_imgs)} imagens em images/hero/')
 
-# Fallback hero if no index_capa_ files found
+# Fallback hero se pasta hero estiver vazia
 if not hero_imgs:
-    print('  hero: nenhum index_capa_* encontrado — usando fotos das categorias')
+    print('  hero: pasta images/hero/ vazia — usando fotos das categorias')
     for cat in ['retratos', 'moda', 'alimentos', 'arquitetura']:
         previews = covers.get(cat, [])
         if previews:
@@ -110,7 +104,7 @@ function renderGallery(categoriaKey) {
   }
   container.innerHTML = cat.imagens.map((img, i) => `
     <div class="masonry-item" data-index="${i}" data-caption="${img.replace(/\\.[^/.]+$/, '').replace(/[-_]/g, ' ')}">
-      <img src="../../images/${categoriaKey}/${img}" alt="${img}" loading="lazy">
+      <img src="../images/${categoriaKey}/${img}" alt="${img}" loading="lazy">
       <div class="masonry-overlay">&#x26F6;</div>
     </div>
   `).join('');

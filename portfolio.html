@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
          </p>`;
 
     return `
-      <div class="strip fade-in">
+      <div class="strip">
         <div class="strip-header">
           <div style="display:flex;align-items:baseline;gap:16px">
             <span class="strip-meta">${c.num}</span>
@@ -188,6 +188,13 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="strip-imgs">${imgs}</div>
       </div>`;
   }).join('');
+
+  // Re-observar elementos fade-in criados dinamicamente
+  if (typeof observer !== 'undefined') {
+    container.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  } else {
+    container.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  }
 });
 </script>
 </body>

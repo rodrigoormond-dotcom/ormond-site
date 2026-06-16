@@ -2,10 +2,7 @@
 const ORMOND_DATA = {
 
   hero: [
-    { src: 'images/retratos/index_-fluirarte3-12317.jpg', label: 'Retratos' },
-    { src: 'images/moda/index_MG_0919-Edit.jpg', label: 'Moda' },
-    { src: 'images/alimentos/index_IMG_0056-2.jpg', label: 'Alimentos' },
-    { src: 'images/arquitetura/index_MG_0854.jpg', label: 'Arquitetura' },
+    { src: 'images/hero/MG_8883-Edit.jpg', label: 'Ormond' },
   ],
 
   videos: [
@@ -619,7 +616,7 @@ function renderGallery(categoriaKey) {
   }
   container.innerHTML = cat.imagens.map((img, i) => `
     <div class="masonry-item" data-index="${i}" data-caption="${img.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ')}">
-      <img src="../../images/${categoriaKey}/${img}" alt="${img}" loading="lazy">
+      <img src="../images/${categoriaKey}/${img}" alt="${img}" loading="lazy">
       <div class="masonry-overlay">&#x26F6;</div>
     </div>
   `).join('');
