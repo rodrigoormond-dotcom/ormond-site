@@ -1,0 +1,12 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Backups
+*.bak
+*.tmp
+
+# Node (se usar ferramentas de build no futuro)
+node_modules/

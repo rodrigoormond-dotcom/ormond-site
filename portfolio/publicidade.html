@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicidade — Ormond Studio</title>
+  <meta name="description" content="Fotografia publicitária e comercial. Campanhas para marcas, agências e publicidade.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Ormond<span>.</span></a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="../portfolio.html" class="active">Portfolio ▾</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="publicidade.html" class="active">Publicidade</a></li>
+        <li><a href="moda.html">Moda</a></li>
+        <li><a href="produtos.html">Produtos & E-commerce</a></li>
+        <li><a href="arquitetura.html">Arquitetura & Design</a></li>
+        <li><a href="retratos.html">Retratos</a></li>
+        <li><a href="alimentos.html">Alimentos</a></li>
+      </ul>
+    </li>
+    <li><a href="../video.html">Vídeo</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../sobre.html">Sobre</a></li>
+    <li><a href="../contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger"><span></span><span></span><span></span></button>
+</nav>
+
+<ul id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <li><a href="../portfolio.html">Portfolio</a></li>
+  <li><a href="publicidade.html">— Publicidade</a></li>
+  <li><a href="moda.html">— Moda</a></li>
+  <li><a href="produtos.html">— Produtos</a></li>
+  <li><a href="arquitetura.html">— Arquitetura</a></li>
+  <li><a href="retratos.html">— Retratos</a></li>
+  <li><a href="alimentos.html">— Alimentos</a></li>
+  <li><a href="../video.html">Vídeo</a></li>
+  <li><a href="../blog/index.html">Blog</a></li>
+  <li><a href="../sobre.html">Sobre</a></li>
+  <li><a href="../contato.html">Contato</a></li>
+</ul>
+
+<!-- GALLERY HEADER -->
+<div class="gallery-header">
+  <div class="gallery-header-inner">
+    <div>
+      <div class="gallery-breadcrumb">
+        <a href="../index.html">Home</a> / <a href="../portfolio.html">Portfolio</a> / Publicidade
+      </div>
+      <div class="section-tag">Portfolio</div>
+      <h1 class="section-title">Publicidade</h1>
+      <p class="section-sub">
+        Fotografia comercial e publicitária para marcas, agências e campanhas de comunicação.
+      </p>
+    </div>
+    <div class="gallery-controls">
+      <button class="gallery-btn active" id="btn-masonry" title="Visualização masonry">⊞</button>
+      <button class="gallery-btn" id="btn-grid" title="Grade">⊟</button>
+    </div>
+  </div>
+
+  <!-- Category nav -->
+  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:32px;">
+    <a href="publicidade.html" class="video-cat-btn active">Publicidade</a>
+    <a href="moda.html" class="video-cat-btn">Moda</a>
+    <a href="produtos.html" class="video-cat-btn">Produtos</a>
+    <a href="arquitetura.html" class="video-cat-btn">Arquitetura</a>
+    <a href="retratos.html" class="video-cat-btn">Retratos</a>
+    <a href="alimentos.html" class="video-cat-btn">Alimentos</a>
+  </div>
+</div>
+
+<!-- VIDEO SECTION for this category -->
+<div class="gallery-video-section" id="cat-videos" style="display:none">
+  <div class="video-section-title">Vídeos — Publicidade</div>
+  <div class="gallery-video-grid" id="cat-video-grid"></div>
+</div>
+
+<!-- GALLERY -->
+<div class="masonry-grid" id="gallery-container">
+  <div style="padding:80px 0;text-align:center;color:var(--grey);column-span:all;">
+    <p style="font-size:14px;letter-spacing:0.1em">Imagens sendo transferidas.</p>
+    <p style="font-size:12px;margin-top:8px;color:var(--mid)">
+      Adicione fotos em <code>images/publicidade/</code> e registre os nomes em <code>js/data.js</code>
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ormond<span>.</span></div>
+  <ul class="footer-links">
+    <li><a href="../portfolio.html">Portfolio</a></li>
+    <li><a href="../video.html">Vídeo</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../sobre.html">Sobre</a></li>
+    <li><a href="../contato.html">Contato</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Ormond Studio.</div>
+</footer>
+
+<div id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">✕</button>
+  <button class="lightbox-nav" id="lightbox-prev">‹</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+  <button class="lightbox-nav" id="lightbox-next">›</button>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  // Render gallery from data.js
+  renderGallery('publicidade');
+
+  // Render category videos
+  const catVids = ORMOND_DATA.videos.filter(v => v.categoria === 'publicidade');
+  if (catVids.length) {
+    document.getElementById('cat-videos').style.display = '';
+    document.getElementById('cat-video-grid').innerHTML = catVids.map(v => `
+      <div class="video-card">
+        <iframe class="video-embed" src="${v.src}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">${v.titulo}</div>
+          <div class="video-source">${v.fonte}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+</script>
+</body>
+</html>

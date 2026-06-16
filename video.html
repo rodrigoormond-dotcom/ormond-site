@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeo — Ormond Studio</title>
+  <meta name="description" content="Produção de vídeo: fashion films, comerciais, institucionais. Assista no Vimeo e YouTube.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Ormond<span>.</span></a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="portfolio.html">Portfolio ▾</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="portfolio/publicidade.html">Publicidade</a></li>
+        <li><a href="portfolio/moda.html">Moda</a></li>
+        <li><a href="portfolio/produtos.html">Produtos & E-commerce</a></li>
+        <li><a href="portfolio/arquitetura.html">Arquitetura & Design</a></li>
+        <li><a href="portfolio/retratos.html">Retratos</a></li>
+        <li><a href="portfolio/alimentos.html">Alimentos</a></li>
+      </ul>
+    </li>
+    <li><a href="video.html" class="active">Vídeo</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger"><span></span><span></span><span></span></button>
+</nav>
+
+<ul id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <li><a href="portfolio.html">Portfolio</a></li>
+  <li><a href="video.html">Vídeo</a></li>
+  <li><a href="blog/index.html">Blog</a></li>
+  <li><a href="sobre.html">Sobre</a></li>
+  <li><a href="contato.html">Contato</a></li>
+</ul>
+
+<!-- VIDEO HERO -->
+<section id="video-hero">
+  <div class="video-hero-bg"></div>
+  <div style="position:relative;z-index:2;width:100%">
+    <div class="section-tag">Produção Audiovisual</div>
+    <h1 class="section-title">Vídeo</h1>
+    <p style="font-size:14px;color:var(--grey);max-width:500px;margin-top:12px;line-height:1.7">
+      Fashion films, comerciais, institucionais e conteúdo para mídias sociais.
+      Vídeos hospedados no Vimeo e YouTube.
+    </p>
+
+    <!-- FILTER -->
+    <div class="video-categories">
+      <button class="video-cat-btn active" data-cat="all">Todos</button>
+      <button class="video-cat-btn" data-cat="publicidade">Publicidade</button>
+      <button class="video-cat-btn" data-cat="moda">Moda</button>
+      <button class="video-cat-btn" data-cat="produtos">Produtos</button>
+      <button class="video-cat-btn" data-cat="arquitetura">Arquitetura</button>
+      <button class="video-cat-btn" data-cat="retratos">Retratos</button>
+      <button class="video-cat-btn" data-cat="alimentos">Alimentos</button>
+    </div>
+  </div>
+</section>
+
+<!-- VIMEO CHANNEL LINK -->
+<div style="background:var(--dark2); padding:20px 60px; display:flex; align-items:center; gap:16px; border-bottom:1px solid var(--mid);">
+  <span style="font-size:12px;color:var(--grey);letter-spacing:0.1em">Assista também em:</span>
+  <a href="https://vimeo.com/ormond" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(200,169,110,0.3);padding:6px 14px;transition:var(--transition)">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.522 3.01 7.522c-.179 0-.806.378-1.881 1.132L0 7.197c1.185-1.044 2.351-2.084 3.501-3.128C5.08 2.701 6.266 1.984 7.055 1.91c1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.507.539 2.45 1.131 3.674 1.776 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.612-2.061-.574 0-1.167.121-1.777.391 1.186-3.868 3.434-5.757 6.762-5.637 2.473.06 3.628 1.664 3.478 4.807z"/></svg>
+    Vimeo / ormond
+  </a>
+  <a href="https://www.youtube.com/@ormond" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--grey);letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--mid);padding:6px 14px;transition:var(--transition)">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+    YouTube
+  </a>
+</div>
+
+<!-- VIDEO SECTIONS by category -->
+<!-- Renderizado por JavaScript via ORMOND_DATA.videos em data.js -->
+<div id="all-videos-container">
+
+  <!-- Publicidade -->
+  <div class="video-section" data-cat="publicidade">
+    <div class="video-section-title">Publicidade</div>
+    <div class="videos-grid" id="vids-publicidade"></div>
+  </div>
+
+  <!-- Moda -->
+  <div class="video-section" data-cat="moda">
+    <div class="video-section-title">Moda & Fashion Films</div>
+    <div class="videos-grid" id="vids-moda"></div>
+  </div>
+
+  <!-- Arquitetura -->
+  <div class="video-section" data-cat="arquitetura">
+    <div class="video-section-title">Arquitetura & Design</div>
+    <div class="videos-grid" id="vids-arquitetura"></div>
+  </div>
+
+  <!-- Produtos -->
+  <div class="video-section" data-cat="produtos">
+    <div class="video-section-title">Produtos & E-commerce</div>
+    <div class="videos-grid" id="vids-produtos"></div>
+  </div>
+
+  <!-- Retratos -->
+  <div class="video-section" data-cat="retratos">
+    <div class="video-section-title">Retratos</div>
+    <div class="videos-grid" id="vids-retratos"></div>
+  </div>
+
+  <!-- Alimentos -->
+  <div class="video-section" data-cat="alimentos">
+    <div class="video-section-title">Alimentos</div>
+    <div class="videos-grid" id="vids-alimentos"></div>
+  </div>
+
+</div>
+
+<!-- PLACEHOLDER quando não há vídeos cadastrados -->
+<div id="video-placeholder" style="padding:80px 60px;text-align:center;color:var(--grey);display:none">
+  <div style="font-size:40px;margin-bottom:20px">▶</div>
+  <p style="font-size:14px;letter-spacing:0.08em;margin-bottom:8px">Vídeos em breve nesta categoria.</p>
+  <p style="font-size:12px;color:var(--mid)">Adicione embeds em <code>js/data.js</code> para esta categoria aparecer.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ormond<span>.</span></div>
+  <ul class="footer-links">
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="video.html">Vídeo</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Ormond Studio.</div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+// Render all video sections
+const cats = ['publicidade','moda','arquitetura','produtos','retratos','alimentos'];
+let totalVids = 0;
+
+cats.forEach(cat => {
+  const vids = ORMOND_DATA.videos.filter(v => v.categoria === cat);
+  const container = document.getElementById('vids-' + cat);
+  const section = container?.closest('.video-section');
+
+  if (!vids.length) {
+    if (section) section.style.display = 'none';
+    return;
+  }
+
+  totalVids += vids.length;
+  if (container) {
+    container.innerHTML = vids.map(v => `
+      <div class="vcard fade-in">
+        <iframe class="vcard-embed" src="${v.src}"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <div class="vcard-body">
+          <div class="vcard-title">${v.titulo}</div>
+          <div class="vcard-meta">${v.descricao || ''}</div>
+          <span class="vcard-source">${v.fonte}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+});
+
+if (totalVids === 0) {
+  document.getElementById('video-placeholder').style.display = '';
+  document.getElementById('all-videos-container').style.display = 'none';
+}
+
+// Re-observe fade-in
+document.querySelectorAll('.fade-in').forEach(el => {
+  if (typeof observer !== 'undefined') observer.observe(el);
+});
+</script>
+</body>
+</html>

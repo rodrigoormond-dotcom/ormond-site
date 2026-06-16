@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Ormond Studio</title>
+  <meta name="description" content="Artigos sobre fotografia, bastidores de produções, técnicas e novidades do Ormond Studio.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Ormond<span>.</span></a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="../portfolio.html">Portfolio ▾</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="../portfolio/publicidade.html">Publicidade</a></li>
+        <li><a href="../portfolio/moda.html">Moda</a></li>
+        <li><a href="../portfolio/produtos.html">Produtos & E-commerce</a></li>
+        <li><a href="../portfolio/arquitetura.html">Arquitetura & Design</a></li>
+        <li><a href="../portfolio/retratos.html">Retratos</a></li>
+        <li><a href="../portfolio/alimentos.html">Alimentos</a></li>
+      </ul>
+    </li>
+    <li><a href="../video.html">Vídeo</a></li>
+    <li><a href="index.html" class="active">Blog</a></li>
+    <li><a href="../sobre.html">Sobre</a></li>
+    <li><a href="../contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger"><span></span><span></span><span></span></button>
+</nav>
+
+<ul id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <li><a href="../portfolio.html">Portfolio</a></li>
+  <li><a href="../video.html">Vídeo</a></li>
+  <li><a href="index.html">Blog</a></li>
+  <li><a href="../sobre.html">Sobre</a></li>
+  <li><a href="../contato.html">Contato</a></li>
+</ul>
+
+<!-- BLOG HEADER -->
+<div style="padding: 140px 60px 60px; background: var(--dark);">
+  <div class="section-tag">Artigos & Bastidores</div>
+  <h1 class="section-title">Blog</h1>
+  <p class="section-sub">
+    Bastidores de produções, técnicas fotográficas, novidades do estúdio e muito mais.
+  </p>
+
+  <!-- Category filter -->
+  <div class="video-categories" style="margin-top:32px">
+    <button class="video-cat-btn active" onclick="filterPosts('all')">Todos</button>
+    <button class="video-cat-btn" onclick="filterPosts('bastidores')">Bastidores</button>
+    <button class="video-cat-btn" onclick="filterPosts('tecnica')">Técnica</button>
+    <button class="video-cat-btn" onclick="filterPosts('projetos')">Projetos</button>
+    <button class="video-cat-btn" onclick="filterPosts('novidades')">Novidades</button>
+  </div>
+</div>
+
+<div class="section" style="padding-top:40px">
+  <div id="blog-grid" class="blog-grid">
+    <!-- Posts carregados via posts.json -->
+  </div>
+  <div id="blog-empty" style="display:none; text-align:center; padding:80px; color:var(--grey);">
+    <p style="font-size:14px; letter-spacing:0.1em">Nenhum post encontrado nesta categoria.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ormond<span>.</span></div>
+  <ul class="footer-links">
+    <li><a href="../portfolio.html">Portfolio</a></li>
+    <li><a href="../video.html">Vídeo</a></li>
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="../sobre.html">Sobre</a></li>
+    <li><a href="../contato.html">Contato</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Ormond Studio.</div>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+let allPosts = [];
+
+async function loadPosts() {
+  const grid = document.getElementById('blog-grid');
+  try {
+    const res = await fetch('posts.json');
+    if (!res.ok) throw new Error();
+    allPosts = await res.json();
+    renderPosts(allPosts);
+  } catch {
+    // Show placeholder posts
+    allPosts = [];
+    grid.innerHTML = `
+      <article class="blog-card fade-in">
+        <div class="blog-card-img-placeholder">📸</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Bastidores</div>
+          <h2 class="blog-card-title">Como adicionar posts ao blog</h2>
+          <p class="blog-card-excerpt">
+            Crie o arquivo <strong>blog/posts.json</strong> com seus posts.
+            Cada post pode ter: title, slug, date, category, excerpt, image.
+            O arquivo blog/TEMPLATE.md mostra como criar posts em Markdown.
+          </p>
+          <div class="blog-card-meta"><time>2025</time></div>
+        </div>
+      </article>
+      <article class="blog-card fade-in">
+        <div class="blog-card-img-placeholder">🎬</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Projetos</div>
+          <h2 class="blog-card-title">Em breve: artigos e bastidores</h2>
+          <p class="blog-card-excerpt">
+            Aqui vão aparecer artigos sobre fotografia, bastidores de produções, dicas de equipamento e muito mais.
+          </p>
+          <div class="blog-card-meta"><time>2025</time></div>
+        </div>
+      </article>
+    `;
+    document.querySelectorAll('.fade-in').forEach(el => {
+      if (typeof observer !== 'undefined') observer.observe(el);
+    });
+  }
+}
+
+function renderPosts(posts) {
+  const grid = document.getElementById('blog-grid');
+  const empty = document.getElementById('blog-empty');
+  if (!posts.length) {
+    grid.innerHTML = '';
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.innerHTML = posts.map(p => `
+    <article class="blog-card fade-in" data-cat="${p.category || ''}">
+      ${p.image
+        ? `<img class="blog-card-img" src="${p.image}" alt="${p.title}" loading="lazy">`
+        : `<div class="blog-card-img-placeholder">📷</div>`}
+      <div class="blog-card-body">
+        <div class="blog-card-cat">${p.category || 'Blog'}</div>
+        <h2 class="blog-card-title">${p.title}</h2>
+        <p class="blog-card-excerpt">${p.excerpt || ''}</p>
+        <div class="blog-card-meta">
+          <time>${formatDate(p.date)}</time>
+        </div>
+        <a href="${p.slug}.html" class="blog-read-link">Ler mais →</a>
+      </div>
+    </article>
+  `).join('');
+  document.querySelectorAll('.fade-in').forEach(el => {
+    if (typeof observer !== 'undefined') observer.observe(el);
+  });
+}
+
+function filterPosts(cat) {
+  document.querySelectorAll('.video-cat-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  const filtered = cat === 'all' ? allPosts : allPosts.filter(p => p.category === cat);
+  renderPosts(filtered);
+}
+
+function formatDate(str) {
+  if (!str) return '';
+  return new Date(str).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+
+loadPosts();
+</script>
+</body>
+</html>
