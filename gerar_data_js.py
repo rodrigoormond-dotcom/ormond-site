@@ -22,23 +22,49 @@ CATEGORIAS = {
 EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
 
 results = {}
+covers = {}   # cover image per category (index_CATEGORIA.jpg)
 for cat in CATEGORIAS:
     folder = os.path.join(SITE_DIR, 'images', cat)
     if not os.path.isdir(folder):
         results[cat] = []
         print(f'  {cat}: pasta não encontrada')
         continue
-    files = sorted([f for f in os.listdir(folder) if os.path.splitext(f)[1].lower() in EXTS])
+    all_files = os.listdir(folder)
+    files = sorted([f for f in all_files if os.path.splitext(f)[1].lower() in EXTS])
     results[cat] = files
-    print(f'  {cat}: {len(files)} imagens')
+    # detect previews: files starting with index_ (up to 3, not index_capa_)
+    previews = [f for f in files if f.lower().startswith('index_') and not f.lower().startswith('index_capa_')][:3]
+    covers[cat] = previews
+    cover_info = f' | {len(previews)} preview(s)' if previews else ' | sem index_*'
+    print(f'  {cat}: {len(files)} imagens{cover_info}')
 
-# Hero: primeira imagem de 3 categorias
+# Hero: files named index_capa_*.jpg inside images/hero/ or images/ root
+hero_folder_candidates = [
+    os.path.join(SITE_DIR, 'images', 'hero'),
+    os.path.join(SITE_DIR, 'images'),
+]
 hero_imgs = []
-for cat in ['publicidade', 'moda', 'retratos', 'alimentos', 'arquitetura', 'produtos']:
-    if results.get(cat):
-        hero_imgs.append({'src': f'images/{cat}/{results[cat][0]}', 'label': cat.capitalize()})
-    if len(hero_imgs) == 4:
-        break
+for folder in hero_folder_candidates:
+    if os.path.isdir(folder):
+        capa_files = sorted([f for f in os.listdir(folder)
+                             if f.lower().startswith('index_capa_') and os.path.splitext(f)[1].lower() in EXTS])
+        rel_base = 'images/hero' if 'hero' in folder else 'images'
+        for f in capa_files:
+            hero_imgs.append({'src': f'{rel_base}/{f}', 'label': 'Ormond'})
+        if hero_imgs:
+            print(f'  hero: {len(hero_imgs)} imagens capa (index_capa_*)')
+            break
+
+# Fallback hero if no index_capa_ files found
+if not hero_imgs:
+    print('  hero: nenhum index_capa_* encontrado — usando fotos das categorias')
+    for cat in ['retratos', 'moda', 'alimentos', 'arquitetura']:
+        if covers.get(cat):
+            hero_imgs.append({'src': f'images/{cat}/{covers[cat]}', 'label': cat.capitalize()})
+        elif results.get(cat):
+            hero_imgs.append({'src': f'images/{cat}/{results[cat][0]}', 'label': cat.capitalize()})
+        if len(hero_imgs) == 4:
+            break
 
 # Montar data.js
 lines = ['/* ORMOND STUDIO — data.js (gerado por gerar_data_js.py) */\n']
@@ -59,6 +85,11 @@ for cat, (titulo, desc) in CATEGORIAS.items():
     lines.append(f"\n    {cat}: {{\n")
     lines.append(f"      titulo: '{titulo}',\n")
     lines.append(f"      descricao: '{desc}',\n")
+    previews_list = covers.get(cat, [])
+    cover_val = previews_list[0] if previews_list else ''
+    lines.append(f"      cover: '{cover_val}',\n")
+    previews_js = ', '.join(f"'{p}'" for p in previews_list)
+    lines.append(f"      previews: [{previews_js}],\n")
     lines.append(f"      imagens: [\n")
     for img in imgs:
         lines.append(f"        '{img}',\n")

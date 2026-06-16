@@ -89,74 +89,8 @@
     Explore nosso trabalho por categoria. Cada projeto é desenvolvido com atenção à identidade da marca e à excelência técnica.
   </p>
 
-  <div class="portfolio-grid">
-
-    <a href="portfolio/publicidade.html" class="portfolio-card fade-in">
-      <div class="portfolio-card-placeholder">📢</div>
-      <!-- <img class="portfolio-card-img" src="images/publicidade/capa.jpg" alt="Publicidade"> -->
-      <div class="portfolio-card-overlay"></div>
-      <div class="portfolio-card-info">
-        <div class="portfolio-card-num">01</div>
-        <div class="portfolio-card-title">Publicidade</div>
-        <div class="portfolio-card-link">Ver trabalhos →</div>
-      </div>
-    </a>
-
-    <a href="portfolio/moda.html" class="portfolio-card fade-in">
-      <div class="portfolio-card-placeholder">👗</div>
-      <!-- <img class="portfolio-card-img" src="images/moda/capa.jpg" alt="Moda"> -->
-      <div class="portfolio-card-overlay"></div>
-      <div class="portfolio-card-info">
-        <div class="portfolio-card-num">02</div>
-        <div class="portfolio-card-title">Moda</div>
-        <div class="portfolio-card-link">Ver trabalhos →</div>
-      </div>
-    </a>
-
-    <a href="portfolio/produtos.html" class="portfolio-card fade-in">
-      <div class="portfolio-card-placeholder">🛍️</div>
-      <!-- <img class="portfolio-card-img" src="images/produtos/capa.jpg" alt="Produtos"> -->
-      <div class="portfolio-card-overlay"></div>
-      <div class="portfolio-card-info">
-        <div class="portfolio-card-num">03</div>
-        <div class="portfolio-card-title">Produtos & E-commerce</div>
-        <div class="portfolio-card-link">Ver trabalhos →</div>
-      </div>
-    </a>
-
-    <a href="portfolio/arquitetura.html" class="portfolio-card fade-in">
-      <div class="portfolio-card-placeholder">🏛️</div>
-      <!-- <img class="portfolio-card-img" src="images/arquitetura/capa.jpg" alt="Arquitetura"> -->
-      <div class="portfolio-card-overlay"></div>
-      <div class="portfolio-card-info">
-        <div class="portfolio-card-num">04</div>
-        <div class="portfolio-card-title">Arquitetura & Design</div>
-        <div class="portfolio-card-link">Ver trabalhos →</div>
-      </div>
-    </a>
-
-    <a href="portfolio/retratos.html" class="portfolio-card fade-in">
-      <div class="portfolio-card-placeholder">🎭</div>
-      <!-- <img class="portfolio-card-img" src="images/retratos/capa.jpg" alt="Retratos"> -->
-      <div class="portfolio-card-overlay"></div>
-      <div class="portfolio-card-info">
-        <div class="portfolio-card-num">05</div>
-        <div class="portfolio-card-title">Retratos</div>
-        <div class="portfolio-card-link">Ver trabalhos →</div>
-      </div>
-    </a>
-
-    <a href="portfolio/alimentos.html" class="portfolio-card fade-in">
-      <div class="portfolio-card-placeholder">🍽️</div>
-      <!-- <img class="portfolio-card-img" src="images/alimentos/capa.jpg" alt="Alimentos"> -->
-      <div class="portfolio-card-overlay"></div>
-      <div class="portfolio-card-info">
-        <div class="portfolio-card-num">06</div>
-        <div class="portfolio-card-title">Alimentos</div>
-        <div class="portfolio-card-link">Ver trabalhos →</div>
-      </div>
-    </a>
-
+  <div class="portfolio-grid" id="portfolio-grid">
+    <!-- Preenchido dinamicamente por data.js — use prefixo index_ nas fotos -->
   </div>
 </section>
 
@@ -351,5 +285,37 @@
 
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const grid = document.getElementById('portfolio-grid');
+  if (!grid) return;
+  const cats = [
+    { key: 'publicidade', num: '01' },
+    { key: 'moda',        num: '02' },
+    { key: 'produtos',    num: '03' },
+    { key: 'arquitetura', num: '04' },
+    { key: 'retratos',    num: '05' },
+    { key: 'alimentos',   num: '06' }
+  ];
+  grid.innerHTML = cats.map(c => {
+    const cat = ORMOND_DATA.portfolio[c.key];
+    // Usa cover (index_*) se existir, senão primeira imagem da pasta
+    const imgFile = cat.cover || (cat.imagens && cat.imagens[0]) || '';
+    const imgTag = imgFile
+      ? `<img class="portfolio-card-img" src="images/${c.key}/${imgFile}" alt="${cat.titulo}" loading="lazy">`
+      : '';
+    return `
+      <a href="portfolio/${c.key}.html" class="portfolio-card fade-in">
+        ${imgTag}
+        <div class="portfolio-card-overlay"></div>
+        <div class="portfolio-card-info">
+          <div class="portfolio-card-num">${c.num}</div>
+          <div class="portfolio-card-title">${cat.titulo}</div>
+          <div class="portfolio-card-link">Ver trabalhos →</div>
+        </div>
+      </a>`;
+  }).join('');
+});
+</script>
 </body>
 </html>

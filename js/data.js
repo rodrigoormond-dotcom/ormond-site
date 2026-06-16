@@ -2,10 +2,10 @@
 const ORMOND_DATA = {
 
   hero: [
-    { src: 'images/publicidade/-dohler-10931.jpg', label: 'Publicidade' },
-    { src: 'images/moda/2017-09-19-altenburg-1001.jpg', label: 'Moda' },
     { src: 'images/retratos/--ALMAl9033.jpg', label: 'Retratos' },
+    { src: 'images/moda/['index_MG_0919-Edit.jpg', 'index_MG_2240.jpg', 'index_catalogo_DADIVA_verao18-web3.jpg']', label: 'Moda' },
     { src: 'images/alimentos/20120724_1411-Edit.jpg', label: 'Alimentos' },
+    { src: 'images/arquitetura/['index_MG_0854.jpg', 'index_PANO0009-2-Pano-Edit.jpg', 'index_S3A7802.jpg']', label: 'Arquitetura' },
   ],
 
   videos: [
@@ -18,6 +18,8 @@ const ORMOND_DATA = {
     publicidade: {
       titulo: 'Publicidade',
       descricao: 'Fotografia comercial e publicitária para marcas, agências e campanhas.',
+      cover: '',
+      previews: [],
       imagens: [
         '-dohler-10931.jpg',
         '-dohler-11063.jpg',
@@ -47,9 +49,7 @@ const ORMOND_DATA = {
         '2017-09-19-altenburg-824.jpg',
         '3-BravaMall-.jpg',
         '305020647_2564168423724741_6782573073752987541_n.jpeg',
-        'ADO_0006_15E_AN_HOTELARIA_23x31CM_CRV.jpg',
         'ADO_0006_15G_AN_HOTELARIA_230x310MM.jpg',
-        'ADO_0006_15H_AN_HOTELARIA_3_23x31CM_CRV.jpg',
         'AF_6974_banner120x150cm.jpg',
         'AF_Anuncio_Apart_prontos_jornal_261x350mm_crv.jpg',
         'AF_Anuncio_Jornal_Noticias_do_dia_261x350mm_crv.jpg',
@@ -141,7 +141,6 @@ const ORMOND_DATA = {
         'SERRA_FINAL_FLAT.jpg',
         'Screenshot_2016-09-29_11.04.32.jpg',
         'Screenshot_2016-09-29_11.05.07.jpg',
-        'Unknown-3.jpg',
         'WhatsApp_Image_2023-06-21_at_16.41.53.jpeg',
         'af_AO6_0007_22_R_Matriculas_2022_2023_Folder_WEB_Page_02.jpg',
         'agro-wallpaper_2___1_.jpg',
@@ -180,6 +179,8 @@ const ORMOND_DATA = {
     moda: {
       titulo: 'Moda',
       descricao: 'Fotografias de moda, lookbooks e catálogos para as melhores marcas.',
+      cover: 'index_MG_0919-Edit.jpg',
+      previews: ['index_MG_0919-Edit.jpg', 'index_MG_2240.jpg', 'index_catalogo_DADIVA_verao18-web3.jpg'],
       imagens: [
         '2017-09-19-altenburg-1001.jpg',
         '2017-09-19-altenburg-1080.jpg',
@@ -206,7 +207,6 @@ const ORMOND_DATA = {
         'MG_0647-Edit.jpg',
         'MG_0808-Edit.jpg',
         'MG_0820-Edit.jpg',
-        'MG_0919-Edit.jpg',
         'MG_1554.jpg',
         'MG_1612.jpg',
         'MG_1642.jpg',
@@ -216,7 +216,6 @@ const ORMOND_DATA = {
         'MG_2184.jpg',
         'MG_2208.jpg',
         'MG_2211.jpg',
-        'MG_2240.jpg',
         'MG_2270.jpg',
         'MG_2283.jpg',
         'MG_2314.jpg',
@@ -344,7 +343,6 @@ const ORMOND_DATA = {
         'atlantica_Verao2011430.jpg',
         'catalogo_DADIVA_verao18-web12.jpg',
         'catalogo_DADIVA_verao18-web2.jpg',
-        'catalogo_DADIVA_verao18-web3.jpg',
         'catalogo_DADIVA_verao18-web4.jpg',
         'catalogo_DADIVA_verao18-web6.jpg',
         'catalogo_DADIVA_verao18-web7.jpg',
@@ -358,6 +356,9 @@ const ORMOND_DATA = {
         'catalogo_ficoInv2015_alta7.jpg',
         'img_C_pia_de_0_capaContra_FICOverao2015_copy.jpg',
         'img_C_pia_de_0_capaContra_FICOverao2015_copy_2.jpg',
+        'index_MG_0919-Edit.jpg',
+        'index_MG_2240.jpg',
+        'index_catalogo_DADIVA_verao18-web3.jpg',
         'pagina_cocneito_16-17_dadiva_inv_17.jpg',
         'pagina_cocneito_1_dadiva_inv_17_copy.jpg',
         'pagina_cocneito_4_dadiva_inv_17_copy.jpg',
@@ -377,6 +378,8 @@ const ORMOND_DATA = {
     produtos: {
       titulo: 'Produtos & E-commerce',
       descricao: 'Fotografia de produto e e-commerce com foco em conversão e qualidade.',
+      cover: 'index_produtos_1_vita-still-13021.jpg',
+      previews: ['index_produtos_1_vita-still-13021.jpg', 'index_produtos_2_vita-still-13027.jpg', 'index_produtos_3_vita-still-13366.jpg'],
       imagens: [
         '-FUNDIVE-16722.jpg',
         '2013-06-27-Riffel_2-170.jpg',
@@ -423,21 +426,30 @@ const ORMOND_DATA = {
         'details14556.jpg',
         'details14603.jpg',
         'details14639.jpg',
+        'index_produtos_1_vita-still-13021.jpg',
+        'index_produtos_2_vita-still-13027.jpg',
+        'index_produtos_3_vita-still-13366.jpg',
         'iris-glass-4b-pretobasevermelho-5135_copiar.jpg',
         'iris_plus_4bc__aco_mesa_esp14058_copiar.jpg',
         'maria_acai_1.jpg',
+        'vita-still-13542.jpg',
+        'vita-still-13692.jpg',
+        'vita-still-13706.jpg',
+        'vita-still-13764.jpg',
+        'vita-still-13823.jpg',
       ]
     },
 
     arquitetura: {
       titulo: 'Arquitetura & Design',
       descricao: 'Fotografia arquitetônica, interiores e design.',
+      cover: 'index_MG_0854.jpg',
+      previews: ['index_MG_0854.jpg', 'index_PANO0009-2-Pano-Edit.jpg', 'index_S3A7802.jpg'],
       imagens: [
         'DJI_0186-Edit.jpg',
         'DJI_0235-Edit.jpg',
         'DJI_0305-Edit.jpg',
         'DJI_0309.jpg',
-        'MG_0854.jpg',
         'MG_1043.jpg',
         'MG_1098.jpg',
         'MG_1103.jpg',
@@ -461,10 +473,8 @@ const ORMOND_DATA = {
         'PANO0001-11-Pano-Edit.jpg',
         'PANO0001-2-Pano-Edit.jpg',
         'PANO0001-9-Edit.jpg',
-        'PANO0009-2-Pano-Edit.jpg',
         'PANO0009-8-Pano-Edit.jpg',
         'S3A7787.jpg',
-        'S3A7802.jpg',
         'S3A7811.jpg',
         'S3A7849.jpg',
         'S3A7891.jpg',
@@ -473,12 +483,17 @@ const ORMOND_DATA = {
         'S3A7984.jpg',
         'S3A8005.jpg',
         'S3A8030.jpg',
+        'index_MG_0854.jpg',
+        'index_PANO0009-2-Pano-Edit.jpg',
+        'index_S3A7802.jpg',
       ]
     },
 
     retratos: {
       titulo: 'Retratos',
       descricao: 'Retratos corporativos, editoriais e artísticos com identidade única.',
+      cover: '',
+      previews: [],
       imagens: [
         '--ALMAl9033.jpg',
         '--ALMAl9300.jpg',
@@ -519,6 +534,8 @@ const ORMOND_DATA = {
     alimentos: {
       titulo: 'Alimentos',
       descricao: 'Food photography para restaurantes, marcas e campanhas gastronômicas.',
+      cover: '',
+      previews: [],
       imagens: [
         '20120724_1411-Edit.jpg',
         '20120725_1591-Edit.jpg',
