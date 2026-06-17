@@ -364,10 +364,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const cat = ORMOND_DATA.portfolio[c.key];
     const previews = (cat.previews && cat.previews.length) ? cat.previews : cat.imagens.slice(0, 3);
     const total = cat.imagens.length;
-    const imgs = previews.map(f => `
-      <a href="portfolio/${c.key}.html" class="strip-img-wrap">
-        <img src="images/${c.key}/${f}" alt="${cat.titulo}" loading="lazy">
-      </a>`).join('');
+    const imgs = previews.length
+      ? previews.map(f => `
+          <a href="portfolio/${c.key}.html" class="strip-img-wrap">
+            <img src="images/${c.key}/${f}" alt="${cat.titulo}" loading="lazy">
+          </a>`).join('')
+      : `<p style="padding:0 60px;color:var(--grey);font-size:13px">Imagens em breve.</p>`;
     return `
       <div class="strip">
         <div class="strip-header">
@@ -377,4 +379,19 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
           <div style="display:flex;align-items:center;gap:24px">
             <span class="strip-meta">${total} trabalhos</span>
-            <a href="portfolio/${c.key}.html" class="strip-li
+            <a href="portfolio/${c.key}.html" class="strip-link">Ver todos →</a>
+          </div>
+        </div>
+        <div class="strip-imgs">${imgs}</div>
+      </div>`;
+  }).join('');
+
+  if (typeof observer !== 'undefined') {
+    container.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  } else {
+    container.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  }
+});
+</script>
+</body>
+</html>
