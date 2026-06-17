@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Ormond Studio</title>
   <meta name="description" content="Portfolio completo do Ormond Studio: publicidade, moda, produtos, arquitetura, retratos e alimentos.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfolio — Ormond Studio">
+  <meta property="og:description" content="Portfolio completo: publicidade, moda, produtos, arquitetura, retratos e alimentos.">
+  <meta property="og:image" content="https://ormondimagens.com.br/images/og-image.jpg">
+  <meta property="og:url" content="https://ormondimagens.com.br/portfolio.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ormondimagens.com.br/images/og-image.jpg">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .strip { border-bottom: 1px solid var(--mid); padding: 64px 0; }
@@ -119,10 +126,7 @@
 <section style="padding:140px 60px 60px; background:var(--dark)">
   <div class="section-tag">Trabalhos</div>
   <h1 class="section-title">Portfolio</h1>
-  <p class="section-sub">
-    Nomeie até 3 fotos com prefixo <code style="color:var(--accent);font-size:12px">index_</code> em cada pasta para aparecerem aqui.
-    Depois rode <code style="color:var(--accent);font-size:12px">python gerar_data_js.py</code>.
-  </p>
+  <p class="section-sub">Fotografia e vídeo para marcas, campanhas e projetos editoriais.</p>
 </section>
 
 <!-- STRIPS -->
@@ -168,10 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <a href="portfolio/${c.key}.html" class="strip-img-wrap">
             <img src="images/${c.key}/${f}" alt="${cat.titulo}" loading="lazy">
           </a>`).join('')
-      : `<p class="strip-empty">
-           Renomeie até 3 fotos com prefixo <strong>index_</strong> na pasta
-           <strong>images/${c.key}/</strong> e rode gerar_data_js.py.
-         </p>`;
+      : `<p class="strip-empty">Imagens em breve.</p>`;
 
     return `
       <div class="strip">
