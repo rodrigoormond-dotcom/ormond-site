@@ -14,62 +14,70 @@
   <meta name="twitter:image" content="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1143.jpg">
   <link rel="stylesheet" href="../../css/style.css">
   <style>
-    /* ── Post usa tema claro, fiel ao original ── */
     .post-page { background: #f5f0eb; color: #2c1f14; }
     .post-page * { box-sizing: border-box; }
 
-    /* Hero */
     .ph { position: relative; width: 100%; height: 100vh; overflow: hidden; }
     .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .ph-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,15,5,0.75) 40%, transparent 70%); }
+    .ph-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,15,5,0.78) 40%, transparent 70%); }
     .ph-text { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 60px 40px; color: #f5f0eb; }
-    .ph-title { font-family: Georgia, serif; font-size: clamp(28px, 5vw, 54px); font-weight: 400; letter-spacing: 0.04em; margin-bottom: 16px; line-height: 1.2; }
-    .ph-sub { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a96e; }
-    .ph-sub span { margin: 0 8px; }
+    .ph-title { font-family: Georgia, serif; font-size: clamp(28px,5vw,54px); font-weight: 400; letter-spacing: 0.04em; margin-bottom: 16px; line-height: 1.2; }
+    .ph-sub { font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: #c9a96e; }
+    .ph-sub span { margin: 0 10px; }
 
-    /* Intro */
     .intro { max-width: 680px; margin: 0 auto; padding: 80px 40px 60px; text-align: center; }
-    .intro p { font-family: Georgia, serif; font-size: 18px; line-height: 1.85; color: #3a2a1a; margin-bottom: 16px; }
-    .intro p.italic { font-style: italic; color: #7a6a5a; font-size: 16px; }
+    .intro p { font-family: Georgia, serif; font-size: 18px; line-height: 1.9; color: #3a2a1a; margin-bottom: 14px; }
+    .intro p.it { font-style: italic; color: #7a6a5a; font-size: 16px; }
     .intro hr { border: none; border-top: 1px solid #d9cfc4; margin: 48px auto; width: 160px; }
 
-    /* Section headers */
-    .sec-head { padding: 48px 40px 40px; text-align: center; }
+    .sec-head { padding: 52px 40px 44px; text-align: center; }
     .sec-head.dark { background: #2c1f14; color: #f5f0eb; }
     .sec-head.light { background: #f5f0eb; color: #2c1f14; }
-    .sec-label { font-size: 11px; letter-spacing: 0.45em; text-transform: uppercase; color: #c9a96e; margin-bottom: 16px; }
-    .sec-title { font-family: Georgia, serif; font-size: clamp(22px, 4vw, 38px); font-weight: 400; }
+    .sec-label { font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase; color: #c9a96e; margin-bottom: 18px; }
+    .sec-title { font-family: Georgia, serif; font-size: clamp(22px,4vw,38px); font-weight: 400; }
 
-    /* Images */
-    .img-full { width: 100%; display: block; }
-    .img-full img { width: 100%; display: block; object-fit: cover; }
+    .img-full img { width: 100%; display: block; max-height: 90vh; object-fit: cover; }
+    .img-tall img { width: 100%; display: block; max-height: 80vh; object-fit: cover; }
+
     .img-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
     .img-2col img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
-    .img-2col.landscape img { aspect-ratio: 4/3; }
-    .img-tall { width: 100%; }
-    .img-tall img { width: 100%; display: block; max-height: 85vh; object-fit: cover; }
+    .img-2col.land img { aspect-ratio: 4/3; }
+    .img-2col.sq img { aspect-ratio: 1/1; }
 
-    /* Caption */
-    .caption { text-align: center; padding: 40px 40px; font-family: Georgia, serif; font-style: italic; font-size: 16px; color: #5a4a3a; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+    .img-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
+    .img-3col img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 
-    /* CTA */
+    .img-left-big { display: grid; grid-template-columns: 2fr 1fr; gap: 3px; }
+    .img-left-big img { width: 100%; object-fit: cover; display: block; }
+    .img-left-big img:first-child { aspect-ratio: 4/3; }
+    .img-left-big img:last-child { aspect-ratio: 2/3; }
+
+    .img-right-big { display: grid; grid-template-columns: 1fr 2fr; gap: 3px; }
+    .img-right-big img { width: 100%; object-fit: cover; display: block; }
+    .img-right-big img:first-child { aspect-ratio: 2/3; }
+    .img-right-big img:last-child { aspect-ratio: 4/3; }
+
+    .gap3 { display: flex; flex-direction: column; gap: 3px; }
+
+    .caption { text-align: center; padding: 40px 40px; font-family: Georgia, serif; font-style: italic; font-size: 16px; color: #5a4a3a; line-height: 1.75; max-width: 560px; margin: 0 auto; }
+    .caption.inv { background: #2c1f14; color: #c9b89a; max-width: 100%; padding: 44px 40px; }
+
     .cta-block { background: #f5f0eb; padding: 80px 40px; text-align: center; }
     .cta-label { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: #c9a96e; margin-bottom: 24px; }
-    .cta-title { font-family: Georgia, serif; font-size: clamp(22px, 3.5vw, 38px); font-weight: 400; color: #2c1f14; line-height: 1.4; margin-bottom: 40px; }
-    .cta-btn { display: inline-block; padding: 16px 40px; background: #2c1f14; color: #c9a96e; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; }
+    .cta-title { font-family: Georgia, serif; font-size: clamp(22px,3.5vw,38px); font-weight: 400; color: #2c1f14; line-height: 1.4; margin-bottom: 40px; }
+    .cta-btn { display: inline-block; padding: 16px 44px; background: #2c1f14; color: #c9a96e; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; }
     .cta-btn:hover { background: #3d2c1a; }
 
-    /* Thera footer block */
-    .thera-block { position: relative; overflow: hidden; }
     .thera-block img { width: 100%; display: block; max-height: 70vh; object-fit: cover; }
-    .thera-caption { background: #2c1f14; color: #f5f0eb; text-align: center; padding: 40px; }
-    .thera-caption .label { font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #c9a96e; margin-bottom: 12px; }
-    .thera-caption .name { font-family: Georgia, serif; font-size: 32px; font-weight: 400; letter-spacing: 0.25em; margin-bottom: 12px; }
-    .thera-caption .tagline { font-style: italic; color: #9a8a7a; font-size: 14px; }
+    .thera-caption { background: #2c1f14; color: #f5f0eb; text-align: center; padding: 44px; }
+    .thera-caption .tl { font-size: 10px; letter-spacing: 0.55em; text-transform: uppercase; color: #c9a96e; margin-bottom: 14px; }
+    .thera-caption .tn { font-family: Georgia, serif; font-size: 34px; font-weight: 400; letter-spacing: 0.3em; margin-bottom: 14px; }
+    .thera-caption .tt { font-style: italic; color: #9a8a7a; font-size: 14px; }
 
-    @media (max-width: 600px) {
-      .img-2col { grid-template-columns: 1fr; }
-      .img-2col img { aspect-ratio: 4/3; }
+    @media (max-width:600px) {
+      .img-2col, .img-left-big, .img-right-big { grid-template-columns: 1fr; }
+      .img-2col img, .img-left-big img, .img-right-big img { aspect-ratio: 4/3 !important; }
+      .img-3col { grid-template-columns: 1fr 1fr; }
       .ph { height: 70vh; }
     }
   </style>
@@ -123,7 +131,7 @@
     <p>Na Serra Catarinense, existe um lugar onde o tempo desacelera.<br>
     Onde o luxo não é medido em metros quadrados, mas em momentos.<br>
     Três dias de produção. Uma família real. Uma história verdadeira.</p>
-    <p class="italic">Um empreendimento que une condomínio exclusivo, turismo de experiência<br>
+    <p class="it">Um empreendimento que une condomínio exclusivo, turismo de experiência<br>
     e a premiada Vinícola Thera — um ativo diferenciado da economia real.</p>
     <hr>
   </div>
@@ -133,9 +141,23 @@
     <div class="sec-label">A &nbsp; R &nbsp; Q &nbsp; U &nbsp; I &nbsp; T &nbsp; E &nbsp; T &nbsp; U &nbsp; R &nbsp; A</div>
     <div class="sec-title">Estruturas que contam uma visão</div>
   </div>
-  <div class="img-2col">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0014.jpg" alt="Vista aérea — piscina e jardim">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1276.jpg" alt="Fachada com araucárias">
+  <div class="gap3">
+    <div class="img-full">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0864.jpg" alt="Vista aérea da propriedade">
+    </div>
+    <div class="img-2col land">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0014.jpg" alt="Piscina — vista aérea">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1276.jpg" alt="Fachada com araucárias">
+    </div>
+    <div class="img-3col">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1313.jpg" alt="Detalhe arquitetônico">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1442.jpg" alt="Interior">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1612.jpg" alt="Varanda">
+    </div>
+    <div class="img-left-big">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1771.jpg" alt="Arquitetura — exterior">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1890.jpg" alt="Detalhe construtivo">
+    </div>
   </div>
   <div class="caption">
     Madeira, pedra e vidro em diálogo com a paisagem.<br>
@@ -147,8 +169,18 @@
     <div class="sec-label">N &nbsp; A &nbsp; T &nbsp; U &nbsp; R &nbsp; E &nbsp; Z &nbsp; A</div>
     <div class="sec-title">A Serra como cenário permanente</div>
   </div>
-  <div class="img-tall">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1382.jpg" alt="Jeep na Serra Catarinense">
+  <div class="gap3">
+    <div class="img-tall">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1382.jpg" alt="Jeep na Serra Catarinense">
+    </div>
+    <div class="img-2col land">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0835.jpg" alt="Vista aérea da serra">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2186.jpg" alt="Natureza — araucárias">
+    </div>
+    <div class="img-2col">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2401.jpg" alt="Paisagem da serra">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0871.jpg" alt="Vista aérea — campos">
+    </div>
   </div>
   <div class="caption">
     Araucárias centenárias. Rios de pedra. Ar puro da serra.<br>
@@ -160,8 +192,19 @@
     <div class="sec-label">P &nbsp; R &nbsp; A &nbsp; Z &nbsp; E &nbsp; R</div>
     <div class="sec-title">O corpo que descansa. A mente que respira.</div>
   </div>
-  <div class="img-tall">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2005.jpg" alt="Yoga à beira da piscina">
+  <div class="gap3">
+    <div class="img-tall">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2005.jpg" alt="Yoga à beira da piscina">
+    </div>
+    <div class="img-right-big">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0899.jpg" alt="Vista aérea — yoga na piscina">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3018.jpg" alt="Área de lazer">
+    </div>
+    <div class="img-3col">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3059.jpg" alt="Wellness">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3159.jpg" alt="Piscina">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3768.jpg" alt="Descanso">
+    </div>
   </div>
   <div class="caption">
     Piscina aquecida, wellness e o silêncio da serra.<br>
@@ -173,16 +216,36 @@
     <div class="sec-label">A &nbsp; M &nbsp; O &nbsp; R</div>
     <div class="sec-title">Histórias reais. Pessoas reais.</div>
   </div>
-  <div class="img-full">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2710.jpg" alt="Família na vinícola">
+  <div class="gap3">
+    <div class="img-full">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2710.jpg" alt="Família na vinícola">
+    </div>
+    <div class="img-2col">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2877.jpg" alt="Mulher com vinho">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2910.jpg" alt="Passeio a cavalo">
+    </div>
+    <div class="img-3col">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3932.jpg" alt="Momento em família">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3939.jpg" alt="Convivência">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3943.jpg" alt="Vida na fazenda">
+    </div>
+    <div class="img-2col land">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A3944.jpg" alt="Família">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A4050.jpg" alt="Momentos">
+    </div>
   </div>
-  <div class="img-2col">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2877.jpg" alt="Mulher com vinho">
-    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2910.jpg" alt="Passeio a cavalo">
-  </div>
-  <div class="caption" style="background:#2c1f14; color:#d9cfc4; max-width:100%; padding:40px;">
+  <div class="caption inv">
     A família que viveu essa experiência não é figurante.<br>
     É a prova de que essa história pode ser a sua.
+  </div>
+
+  <!-- GALERIA FINAL -->
+  <div class="gap3">
+    <div class="img-3col">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A4082.jpg" alt="">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A4124.jpg" alt="">
+      <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A4292.jpg" alt="">
+    </div>
   </div>
 
   <!-- CTA -->
@@ -196,15 +259,14 @@
   <div class="thera-block">
     <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0002.jpg" alt="Vista aérea Fazenda Bom Retiro e Thera Vinícola">
     <div class="thera-caption">
-      <div class="label">Vinícola</div>
-      <div class="name">T &nbsp; H &nbsp; E &nbsp; R &nbsp; A</div>
-      <div class="tagline">Premiada. Na Serra Catarinense. Dentro do seu futuro lar.</div>
+      <div class="tl">Vinícola</div>
+      <div class="tn">T &nbsp; H &nbsp; E &nbsp; R &nbsp; A</div>
+      <div class="tt">Premiada. Na Serra Catarinense. Dentro do seu futuro lar.</div>
     </div>
   </div>
 
-</div><!-- /post-page -->
+</div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Ormond<span>.</span></div>
   <ul class="footer-links">
