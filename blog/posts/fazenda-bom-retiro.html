@@ -3,30 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fazenda Bom Retiro × Thera Vinícola — O tempo é o seu maior ativo | Ormond Studio</title>
-  <meta name="description" content="Na Serra Catarinense, três dias de produção, uma família real e uma história verdadeira. O case que une condomínio exclusivo, turismo de experiência e a premiada Thera Vinícola.">
+  <title>Fazenda Bom Retiro × Thera Vinícola | Ormond Studio</title>
+  <meta name="description" content="Na Serra Catarinense, existe um lugar onde o tempo desacelera. Três dias de produção. Uma família real. Uma história verdadeira.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Fazenda Bom Retiro × Thera Vinícola | Ormond Studio">
-  <meta property="og:description" content="Na Serra Catarinense, três dias de produção, uma família real e uma história verdadeira.">
-  <meta property="og:image" content="https://ormondimagens.com.br/images/publicidade/FAZENDA2_copy.jpg">
+  <meta property="og:description" content="Na Serra Catarinense, existe um lugar onde o tempo desacelera. Três dias de produção. Uma família real. Uma história verdadeira.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1143.jpg">
   <meta property="og:url" content="https://ormondimagens.com.br/blog/posts/fazenda-bom-retiro.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://ormondimagens.com.br/images/publicidade/FAZENDA2_copy.jpg">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1143.jpg">
   <link rel="stylesheet" href="../../css/style.css">
   <style>
-    .post-hero { min-height: 80vh; background: var(--dark2); display: flex; align-items: flex-end; padding: 60px; position: relative; overflow: hidden; }
-    .post-hero-bg { position: absolute; inset: 0; background-image: url('../../images/publicidade/FAZENDA2_copy.jpg'); background-size: cover; background-position: center; opacity: 0.6; }
-    .post-hero-content { position: relative; z-index: 2; max-width: 800px; }
-    .post-body { max-width: 760px; margin: 0 auto; padding: 80px 60px; }
-    .post-body p { font-size: 17px; line-height: 1.9; color: var(--light); margin-bottom: 28px; }
-    .post-body h2 { font-size: 22px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 56px 0 24px; }
-    .post-imgs { display: grid; grid-template-columns: repeat(2,1fr); gap: 4px; margin: 48px 0; }
-    .post-imgs img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-    .post-imgs.single { grid-template-columns: 1fr; }
-    .post-imgs.single img { aspect-ratio: 16/9; }
-    .post-meta { display: flex; gap: 24px; margin-bottom: 48px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); flex-wrap: wrap; }
-    .post-quote { border-left: 2px solid var(--accent); padding: 24px 32px; margin: 48px 0; color: var(--grey); font-style: italic; font-size: 19px; line-height: 1.7; }
-    @media (max-width:600px) { .post-body { padding: 40px 24px; } .post-imgs { grid-template-columns: 1fr; } .post-hero { padding: 40px 24px; } }
+    /* ── Post usa tema claro, fiel ao original ── */
+    .post-page { background: #f5f0eb; color: #2c1f14; }
+    .post-page * { box-sizing: border-box; }
+
+    /* Hero */
+    .ph { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+    .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ph-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,15,5,0.75) 40%, transparent 70%); }
+    .ph-text { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 60px 40px; color: #f5f0eb; }
+    .ph-title { font-family: Georgia, serif; font-size: clamp(28px, 5vw, 54px); font-weight: 400; letter-spacing: 0.04em; margin-bottom: 16px; line-height: 1.2; }
+    .ph-sub { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a96e; }
+    .ph-sub span { margin: 0 8px; }
+
+    /* Intro */
+    .intro { max-width: 680px; margin: 0 auto; padding: 80px 40px 60px; text-align: center; }
+    .intro p { font-family: Georgia, serif; font-size: 18px; line-height: 1.85; color: #3a2a1a; margin-bottom: 16px; }
+    .intro p.italic { font-style: italic; color: #7a6a5a; font-size: 16px; }
+    .intro hr { border: none; border-top: 1px solid #d9cfc4; margin: 48px auto; width: 160px; }
+
+    /* Section headers */
+    .sec-head { padding: 48px 40px 40px; text-align: center; }
+    .sec-head.dark { background: #2c1f14; color: #f5f0eb; }
+    .sec-head.light { background: #f5f0eb; color: #2c1f14; }
+    .sec-label { font-size: 11px; letter-spacing: 0.45em; text-transform: uppercase; color: #c9a96e; margin-bottom: 16px; }
+    .sec-title { font-family: Georgia, serif; font-size: clamp(22px, 4vw, 38px); font-weight: 400; }
+
+    /* Images */
+    .img-full { width: 100%; display: block; }
+    .img-full img { width: 100%; display: block; object-fit: cover; }
+    .img-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .img-2col img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .img-2col.landscape img { aspect-ratio: 4/3; }
+    .img-tall { width: 100%; }
+    .img-tall img { width: 100%; display: block; max-height: 85vh; object-fit: cover; }
+
+    /* Caption */
+    .caption { text-align: center; padding: 40px 40px; font-family: Georgia, serif; font-style: italic; font-size: 16px; color: #5a4a3a; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+    /* CTA */
+    .cta-block { background: #f5f0eb; padding: 80px 40px; text-align: center; }
+    .cta-label { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: #c9a96e; margin-bottom: 24px; }
+    .cta-title { font-family: Georgia, serif; font-size: clamp(22px, 3.5vw, 38px); font-weight: 400; color: #2c1f14; line-height: 1.4; margin-bottom: 40px; }
+    .cta-btn { display: inline-block; padding: 16px 40px; background: #2c1f14; color: #c9a96e; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; }
+    .cta-btn:hover { background: #3d2c1a; }
+
+    /* Thera footer block */
+    .thera-block { position: relative; overflow: hidden; }
+    .thera-block img { width: 100%; display: block; max-height: 70vh; object-fit: cover; }
+    .thera-caption { background: #2c1f14; color: #f5f0eb; text-align: center; padding: 40px; }
+    .thera-caption .label { font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #c9a96e; margin-bottom: 12px; }
+    .thera-caption .name { font-family: Georgia, serif; font-size: 32px; font-weight: 400; letter-spacing: 0.25em; margin-bottom: 12px; }
+    .thera-caption .tagline { font-style: italic; color: #9a8a7a; font-size: 14px; }
+
+    @media (max-width: 600px) {
+      .img-2col { grid-template-columns: 1fr; }
+      .img-2col img { aspect-ratio: 4/3; }
+      .ph { height: 70vh; }
+    }
   </style>
 </head>
 <body>
@@ -61,61 +106,103 @@
   <li><a href="../../contato.html">Contato</a></li>
 </ul>
 
-<section class="post-hero">
-  <div class="post-hero-bg"></div>
-  <div class="post-hero-content">
-    <div class="section-tag">Projetos</div>
-    <h1 style="font-size:clamp(28px,5vw,60px);font-weight:200;letter-spacing:0.08em;line-height:1.1;margin:16px 0 24px">
-      Fazenda Bom Retiro<br><em>× Thera Vinícola</em>
-    </h1>
-    <p style="font-size:18px;color:var(--light);max-width:540px;line-height:1.6">
-      O tempo é o seu maior ativo.
-    </p>
+<div class="post-page">
+
+  <!-- HERO -->
+  <div class="ph">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1143.jpg" alt="Fazenda Bom Retiro">
+    <div class="ph-overlay"></div>
+    <div class="ph-text">
+      <div class="ph-title">O tempo é o seu maior ativo.</div>
+      <div class="ph-sub">Fazenda Bom Retiro <span>×</span> Thera Vinícola</div>
+    </div>
   </div>
-</section>
 
-<article>
-  <div class="post-body">
-    <div class="post-meta">
-      <span>Projetos</span>
-      <span>18 de Junho de 2026</span>
-      <span>Arquitetura & Lifestyle</span>
-    </div>
-
-    <p>Na Serra Catarinense, existe um lugar onde o tempo desacelera. Onde o luxo não é medido em metros quadrados, mas em momentos. Três dias de produção. Uma família real. Uma história verdadeira.</p>
-
-    <p>A Fazenda Bom Retiro é um empreendimento que une condomínio exclusivo, turismo de experiência e a premiada Vinícola Thera — um ativo diferenciado da economia real, encravado entre araucárias centenárias e vistas da Serra Catarinense.</p>
-
-    <div class="post-quote">
-      "O luxo não é medido em metros quadrados, mas em momentos."
-    </div>
-
-    <h2>Arquitetura — Estruturas que contam uma visão</h2>
-
-    <p>Madeira, pedra e vidro em diálogo com a paisagem. Cada volume foi pensado para que o horizonte seja sempre o protagonista. A fotografia precisava capturar essa intenção: não apenas documentar a arquitetura, mas revelar a filosofia por trás de cada escolha construtiva.</p>
-
-    <div class="post-imgs single">
-      <img src="../../images/publicidade/FAZENDA2_copy.jpg" alt="Fazenda Bom Retiro — Arquitetura" loading="lazy">
-    </div>
-
-    <h2>Natureza — A Serra como cenário permanente</h2>
-
-    <p>Araucárias centenárias. Rios de pedra. Ar puro da Serra. A natureza não é apenas o entorno — é parte fundamental do projeto. Trabalhar nessa localização exige respeito ao ritmo do lugar: a luz muda rápido, as nuvens desenham sombras sobre o campo e cada hora do dia oferece uma moldura diferente.</p>
-
-    <h2>A Produção</h2>
-
-    <p>Foram três dias de imersão total. Uma família real que abriu as portas do seu retiro para que pudéssemos contar sua história. Isso é raro — e faz toda a diferença no resultado final. Não estávamos criando uma fantasia de lifestyle: estávamos documentando algo que já existia com autenticidade.</p>
-
-    <p>A equipe trabalhou do amanhecer ao entardecer, aproveitando a luz da Serra que muda constantemente e oferece condições únicas para fotografia. Piscina aquecida, espaços de wellness e o silêncio profundo da serra entraram no quadro não como props de catálogo, mas como parte de uma narrativa viva.</p>
-
-    <h2>Thera Vinícola — O ativo que transforma o investimento</h2>
-
-    <p>A Thera Vinícola é a cereja do projeto. Premiada, com identidade visual forte e uma proposta de enoturismo que complementa perfeitamente o conceito da Fazenda Bom Retiro. Fotografar os vinhedos, a adega e os momentos de degustação foi conectar dois mundos que se completam: o silêncio da natureza e o prazer de uma boa taça.</p>
-
-    <p>O resultado é um banco de imagens que serve tanto para o lançamento do empreendimento quanto para campanhas contínuas — materiais para redes sociais, apresentações para investidores e conteúdo editorial de longo prazo.</p>
-
+  <!-- INTRO -->
+  <div class="intro">
+    <p>Na Serra Catarinense, existe um lugar onde o tempo desacelera.<br>
+    Onde o luxo não é medido em metros quadrados, mas em momentos.<br>
+    Três dias de produção. Uma família real. Uma história verdadeira.</p>
+    <p class="italic">Um empreendimento que une condomínio exclusivo, turismo de experiência<br>
+    e a premiada Vinícola Thera — um ativo diferenciado da economia real.</p>
+    <hr>
   </div>
-</article>
+
+  <!-- ARQUITETURA -->
+  <div class="sec-head dark">
+    <div class="sec-label">A &nbsp; R &nbsp; Q &nbsp; U &nbsp; I &nbsp; T &nbsp; E &nbsp; T &nbsp; U &nbsp; R &nbsp; A</div>
+    <div class="sec-title">Estruturas que contam uma visão</div>
+  </div>
+  <div class="img-2col">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0014.jpg" alt="Vista aérea — piscina e jardim">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1276.jpg" alt="Fachada com araucárias">
+  </div>
+  <div class="caption">
+    Madeira, pedra e vidro em diálogo com a paisagem.<br>
+    Cada volume pensado para que o horizonte seja sempre o protagonista.
+  </div>
+
+  <!-- NATUREZA -->
+  <div class="sec-head dark">
+    <div class="sec-label">N &nbsp; A &nbsp; T &nbsp; U &nbsp; R &nbsp; E &nbsp; Z &nbsp; A</div>
+    <div class="sec-title">A Serra como cenário permanente</div>
+  </div>
+  <div class="img-tall">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A1382.jpg" alt="Jeep na Serra Catarinense">
+  </div>
+  <div class="caption">
+    Araucárias centenárias. Rios de pedra. Ar puro da serra.<br>
+    A natureza não é o entorno — é parte fundamental do projeto.
+  </div>
+
+  <!-- PRAZER -->
+  <div class="sec-head light">
+    <div class="sec-label">P &nbsp; R &nbsp; A &nbsp; Z &nbsp; E &nbsp; R</div>
+    <div class="sec-title">O corpo que descansa. A mente que respira.</div>
+  </div>
+  <div class="img-tall">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2005.jpg" alt="Yoga à beira da piscina">
+  </div>
+  <div class="caption">
+    Piscina aquecida, wellness e o silêncio da serra.<br>
+    Quando tudo está no lugar, o tempo pertence a você.
+  </div>
+
+  <!-- AMOR -->
+  <div class="sec-head dark">
+    <div class="sec-label">A &nbsp; M &nbsp; O &nbsp; R</div>
+    <div class="sec-title">Histórias reais. Pessoas reais.</div>
+  </div>
+  <div class="img-full">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2710.jpg" alt="Família na vinícola">
+  </div>
+  <div class="img-2col">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2877.jpg" alt="Mulher com vinho">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/_02A2910.jpg" alt="Passeio a cavalo">
+  </div>
+  <div class="caption" style="background:#2c1f14; color:#d9cfc4; max-width:100%; padding:40px;">
+    A família que viveu essa experiência não é figurante.<br>
+    É a prova de que essa história pode ser a sua.
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <div class="cta-label">Fazenda Bom Retiro &nbsp;×&nbsp; Thera</div>
+    <div class="cta-title">Conheça o empreendimento<br>que transforma tempo em patrimônio.</div>
+    <a href="../../contato.html" class="cta-btn">Viva essa história</a>
+  </div>
+
+  <!-- THERA AERIAL -->
+  <div class="thera-block">
+    <img src="https://raw.githubusercontent.com/rodrigoormond-dotcom/ormond/main/cases/thera/images/DJI_0002.jpg" alt="Vista aérea Fazenda Bom Retiro e Thera Vinícola">
+    <div class="thera-caption">
+      <div class="label">Vinícola</div>
+      <div class="name">T &nbsp; H &nbsp; E &nbsp; R &nbsp; A</div>
+      <div class="tagline">Premiada. Na Serra Catarinense. Dentro do seu futuro lar.</div>
+    </div>
+  </div>
+
+</div><!-- /post-page -->
 
 <!-- FOOTER -->
 <footer>
