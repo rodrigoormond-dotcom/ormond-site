@@ -1,8 +1,16 @@
 [
   {
+    "title": "Fazenda Bom Retiro × Thera Vinícola — O tempo é o seu maior ativo",
+    "slug": "posts/fazenda-bom-retiro",
+    "date": "2026-06-18",
+    "category": "projetos",
+    "excerpt": "Na Serra Catarinense, três dias de produção, uma família real e uma história verdadeira. Condomínio exclusivo, turismo de experiência e a premiada Thera Vinícola.",
+    "image": "../images/publicidade/FAZENDA2_copy.jpg"
+  },
+  {
     "title": "Case Thera — Sistema Completo de Fotografia de Produto",
     "slug": "posts/thera",
-    "date": "2026-06-18",
+    "date": "2018-07-01",
     "category": "projetos",
     "excerpt": "Como criamos um banco de 200+ imagens para e-commerce, catálogos e campanhas digitais da Thera, marca catarinense de produtos de saúde e bem-estar.",
     "image": "../images/produtos/THERA_garrafas-142.jpg"
