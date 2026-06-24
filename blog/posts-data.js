@@ -1,11 +1,12 @@
-[
+// Gerado automaticamente — edite posts.json e rode gerar_posts_js.py
+window.BLOG_POSTS = [
   {
     "title": "Grupo Almeida Jr — Seis shoppings, um portfólio",
     "slug": "posts/almeida-jr-shoppings",
     "date": "2026-06-24",
     "category": "projetos",
     "excerpt": "Seis shoppings do Grupo Almeida Jr em Santa Catarina. Um book institucional que exigiu planejamento dedicado, produção específica e tratamento de imagem para mostrar o produto shopping no seu melhor momento.",
-    "image": "../../images/cases/almeida-jr/continente/DJI_0025.jpg"
+    "image": "../images/cases/almeida-jr/continente/DJI_0025.jpg"
   },
   {
     "title": "Fazenda Bom Retiro × Thera Vinícola — O tempo é o seu maior ativo",
@@ -47,4 +48,4 @@
     "excerpt": "Técnicas e bastidores de uma produção de food photography: iluminação, styling, props e o trabalho de equipe que faz cada prato parecer irresistível.",
     "image": "../images/alimentos/index_IMG_0056-2.jpg"
   }
-]
+];

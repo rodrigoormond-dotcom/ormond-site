@@ -82,49 +82,13 @@
 
 <script src="../js/data.js"></script>
 <script src="../js/main.js"></script>
+<script src="posts-data.js"></script>
 <script>
 let allPosts = [];
 
-async function loadPosts() {
-  const grid = document.getElementById('blog-grid');
-  try {
-    const res = await fetch('posts.json');
-    if (!res.ok) throw new Error();
-    allPosts = await res.json();
-    renderPosts(allPosts);
-  } catch {
-    // Show placeholder posts
-    allPosts = [];
-    grid.innerHTML = `
-      <article class="blog-card fade-in">
-        <div class="blog-card-img-placeholder">📸</div>
-        <div class="blog-card-body">
-          <div class="blog-card-cat">Bastidores</div>
-          <h2 class="blog-card-title">Como adicionar posts ao blog</h2>
-          <p class="blog-card-excerpt">
-            Crie o arquivo <strong>blog/posts.json</strong> com seus posts.
-            Cada post pode ter: title, slug, date, category, excerpt, image.
-            O arquivo blog/TEMPLATE.md mostra como criar posts em Markdown.
-          </p>
-          <div class="blog-card-meta"><time>2025</time></div>
-        </div>
-      </article>
-      <article class="blog-card fade-in">
-        <div class="blog-card-img-placeholder">🎬</div>
-        <div class="blog-card-body">
-          <div class="blog-card-cat">Projetos</div>
-          <h2 class="blog-card-title">Em breve: artigos e bastidores</h2>
-          <p class="blog-card-excerpt">
-            Aqui vão aparecer artigos sobre fotografia, bastidores de produções, dicas de equipamento e muito mais.
-          </p>
-          <div class="blog-card-meta"><time>2025</time></div>
-        </div>
-      </article>
-    `;
-    document.querySelectorAll('.fade-in').forEach(el => {
-      if (typeof observer !== 'undefined') observer.observe(el);
-    });
-  }
+function loadPosts() {
+  allPosts = window.BLOG_POSTS || [];
+  renderPosts(allPosts);
 }
 
 function renderPosts(posts) {
