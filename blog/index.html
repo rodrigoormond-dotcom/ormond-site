@@ -82,6 +82,7 @@
 
 <script src="../js/data.js"></script>
 <script src="../js/main.js"></script>
+<script src="posts-data.js"></script>
 <script>
 let allPosts = [];
 
@@ -99,12 +100,10 @@ function renderPosts(posts) {
     return;
   }
   empty.style.display = 'none';
-  grid.innerHTML = posts.map(p => {
-    const img = p.image && !p.image.startsWith('http') ? '../' + p.image : (p.image || '');
-    return `
+  grid.innerHTML = posts.map(p => `
     <article class="blog-card fade-in" data-cat="${p.category || ''}">
-      ${img
-        ? `<img class="blog-card-img" src="${img}" alt="${p.title}" loading="lazy">`
+      ${p.image
+        ? `<img class="blog-card-img" src="${p.image}" alt="${p.title}" loading="lazy">`
         : `<div class="blog-card-img-placeholder">📷</div>`}
       <div class="blog-card-body">
         <div class="blog-card-cat">${p.category || 'Blog'}</div>
@@ -116,7 +115,7 @@ function renderPosts(posts) {
         <a href="${p.slug}.html" class="blog-read-link">Ler mais →</a>
       </div>
     </article>
-  `}).join('');
+  `).join('');
   document.querySelectorAll('.fade-in').forEach(el => {
     if (typeof observer !== 'undefined') observer.observe(el);
   });
