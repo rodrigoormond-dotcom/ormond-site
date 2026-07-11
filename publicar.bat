@@ -4,7 +4,7 @@ echo.
 echo === ORMOND STUDIO — Publicar no GitHub ===
 echo.
 git add -A
-git commit -m "feat: adiciona case Schluck ao blog, home e portfolio de alimentos"
+git commit -m "feat: adiciona novas fotos Schluck (portfolio, blog) - segunda leva de still"
 git push origin main
 echo.
 echo === Pronto! Site publicado em rodrigoormond-dotcom.github.io ===
