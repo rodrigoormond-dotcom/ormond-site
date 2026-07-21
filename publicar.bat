@@ -3,17 +3,24 @@ cd /d "%~dp0"
 echo.
 echo === ORMOND STUDIO — Publicar no GitHub ===
 echo.
+
+:: Remove lock file se existir (lock travado)
+if exist ".git\index.lock" (
+  echo Removendo lock travado...
+  del /f ".git\index.lock"
+)
+if exist ".git\MERGE_HEAD" (
+  del /f ".git\MERGE_HEAD"
+)
+
+:: Sincroniza com o remoto antes de publicar
+echo Sincronizando com GitHub...
+git pull origin main --rebase
+
 git add -A
-git commit -m "feat: adiciona case Schluck ao blog, home e portfolio de alimentos"
+git commit -m "add: og tags preview de link + post fazenda bom retiro com todas as imagens"
 git push origin main
 echo.
-echo === Pronto! Site publicado em rodrigoormond-dotcom.github.io ===
-echo.
-echo Para o dominio ormondimagens.com.br funcionar, configure os DNS:
-echo   Tipo A  @   185.199.108.153
-echo   Tipo A  @   185.199.109.153
-echo   Tipo A  @   185.199.110.153
-echo   Tipo A  @   185.199.111.153
-echo   CNAME   www rodrigoormond-dotcom.github.io
+echo === Pronto! Site publicado em ormondimagens.com.br ===
 echo.
 pause
