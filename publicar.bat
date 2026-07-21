@@ -4,22 +4,22 @@ echo.
 echo === ORMOND STUDIO — Publicar no GitHub ===
 echo.
 
-:: Remove lock file se existir (lock travado)
-if exist ".git\index.lock" (
-  echo Removendo lock travado...
-  del /f ".git\index.lock"
-)
-if exist ".git\MERGE_HEAD" (
-  del /f ".git\MERGE_HEAD"
-)
+:: Desativa limpeza automatica (evita conflito com OneDrive)
+git config gc.auto 0
 
-:: Sincroniza com o remoto antes de publicar
-echo Sincronizando com GitHub...
-git pull origin main --rebase
+:: Remove lock travado se existir
+if exist ".git\index.lock" del /f ".git\index.lock"
 
+:: Guarda alteracoes locais, puxa remoto, restaura
+git stash
+git pull origin main --no-rebase
+git stash pop
+
+:: Publica
 git add -A
-git commit -m "add: og tags preview de link + post fazenda bom retiro com todas as imagens"
+git commit -m "update: publicacao site ormond"
 git push origin main
+
 echo.
 echo === Pronto! Site publicado em ormondimagens.com.br ===
 echo.
