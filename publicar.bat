@@ -17,7 +17,11 @@ git stash pop
 
 :: Publica
 git add -A
+<<<<<<< HEAD
 git commit -m "update: publicacao site ormond"
+=======
+git commit -m "feat: adiciona novas fotos Schluck (portfolio, blog) - segunda leva de still"
+>>>>>>> origin/main
 git push origin main
 
 echo.
